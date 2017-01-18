@@ -4,6 +4,7 @@ const db = require('../models');
 const Author = db.Author;
 const Post = db.Post;
 
+//index page
 router.route('/')
   .get((req, res) => {
     Post.findAll()
@@ -31,11 +32,13 @@ router.route('/')
       });
   });
 
+//new page
 router.route('/new')
   .get((req,res) => {
     res.render('new');
   });
 
+//id page
 router.route('/:id')
   .get((req,res) => {
     Post.findAll({
@@ -52,7 +55,6 @@ router.route('/:id')
       });
   })
   .put((req, res) => {
-    console.log('req.body: ', req.body);
     Post.update({
       author: req.body.author,
       title: req.body.title,
@@ -64,8 +66,8 @@ router.route('/:id')
       }
     })
     .then((post) => {
-      console.log('post: ', post);
-      res.json(post)
+      console.log('req.params.id: ', req.params.id);
+      res.redirect(`/portfolio/${req.params.id}`)
     })
     .catch((e) =>{
         console.error(e);
@@ -73,5 +75,11 @@ router.route('/:id')
       });
   });
 
+
+//edit page
+router.route('/:id/edit')
+  .get((req, res) => {
+    res.render('edit', {id: req.params.id})
+  })
 
 module.exports = router;
