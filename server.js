@@ -6,13 +6,14 @@ const db = require('./models');
 const portfolio = require('./routes/portfolio');
 
 
-
 app.engine('.hbs', exphbs({
   extname: '.hbs',
   defaultLayout: 'main',
 }))
 
 app.set('view engine', '.hbs');
+
+app.set('views', 'views')
 
 app.use(bodyParser.urlencoded({
   extended:true

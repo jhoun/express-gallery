@@ -4,14 +4,12 @@ const db = require('../models');
 const Author = db.Author;
 const Post = db.Post;
 
-
-
 router.route('/')
   .get((req, res) => {
     Post.findAll()
     .then((post)  => {
       console.log('post: ', post);
-      res.render('./index', {post});
+      res.render('index', {post});
     })
     .catch((e) =>{
       console.error(e);
@@ -26,7 +24,7 @@ router.route('/')
       description: req.body.description
     })
       .then((post) =>{
-        res.json(post);
+        res.redirect('/portfolio');
       })
       .catch((e) =>{
         console.error(e);
@@ -35,8 +33,8 @@ router.route('/')
   });
 
 router.route('/new')
-  .get((res, req) => {
-    res.render('./portfolio/new');
+  .get((req,res) => {
+    res.render('new');
   });
 
 
