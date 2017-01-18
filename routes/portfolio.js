@@ -44,9 +44,34 @@ router.route('/:id')
       }
     })
     .then((post) => {
+      res.render('id', {post})
+    })
+    .catch((e) =>{
+        console.error(e);
+        res.json(e);
+      });
+  })
+  .put((req, res) => {
+    console.log('req.body: ', req.body);
+    Post.update({
+      author: req.body.author,
+      title: req.body.title,
+      link: req.body.link,
+      description: req.body.link
+    } , {
+      where: {
+        id : req.params.id
+      }
+    })
+    .then((post) => {
+      console.log('post: ', post);
       res.json(post)
     })
-  })
+    .catch((e) =>{
+        console.error(e);
+        res.json(e);
+      });
+  });
 
 
 module.exports = router;
