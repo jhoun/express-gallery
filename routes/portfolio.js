@@ -73,6 +73,16 @@ router.route('/:id')
         console.error(e);
         res.json(e);
       });
+  })
+  .delete((req, res) => {
+    Post.destroy({
+      where: {
+        id: req.params.id
+      }
+    })
+    .then((post) => {
+      res.redirect('/portfolio')
+    })
   });
 
 
