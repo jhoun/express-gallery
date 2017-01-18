@@ -8,7 +8,6 @@ router.route('/')
   .get((req, res) => {
     Post.findAll()
     .then((post)  => {
-      console.log('post: ', post);
       res.render('index', {post});
     })
     .catch((e) =>{
@@ -36,6 +35,18 @@ router.route('/new')
   .get((req,res) => {
     res.render('new');
   });
+
+router.route('/:id')
+  .get((req,res) => {
+    Post.findAll({
+      where: {
+        id : req.params.id
+      }
+    })
+    .then((post) => {
+      res.json(post)
+    })
+  })
 
 
 module.exports = router;
