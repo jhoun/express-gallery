@@ -1,7 +1,7 @@
 <h1>Your updated Product</h1>
 
 <ul>
-{{#each post}}
+{{#each project}}
   <li>Author: {{this.author}}</li>
   <li>Title: {{this.title}}</li>
   <li>Link: {{this.link}}</li>
@@ -9,3 +9,9 @@
   <br>
 {{/each}}
 </ul>
+
+
+<form form="form"  method="POST" enctype="x-www-form-urlencoded">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="delete">
+</form>

@@ -2,14 +2,14 @@ const express = require('express');
 const router = express.Router();
 const db = require('../models');
 const Author = db.Author;
-const Post = db.Post;
+const Project = db.Project;
 
 //index page
 router.route('/')
   .get((req, res) => {
-    Post.findAll()
-    .then((post)  => {
-      res.render('index', {post});
+    Project.findAll()
+    .then((project)  => {
+      res.render('index', {project});
     })
     .catch((e) =>{
       console.error(e);
@@ -17,13 +17,13 @@ router.route('/')
     });
   })
   .post((req,res) => {
-    Post.create({
+    Project.create({
       author: req.body.author,
       title: req.body.title,
       link: req.body.link,
       description: req.body.description
     })
-      .then((post) =>{
+      .then((project) =>{
         res.redirect('/portfolio');
       })
       .catch((e) =>{
@@ -41,13 +41,13 @@ router.route('/new')
 //id page
 router.route('/:id')
   .get((req,res) => {
-    Post.findAll({
+    Project.findAll({
       where: {
         id : req.params.id
       }
     })
-    .then((post) => {
-      res.render('id', {post})
+    .then((project) => {
+      res.render('id', {project})
     })
     .catch((e) =>{
         console.error(e);
@@ -55,7 +55,7 @@ router.route('/:id')
       });
   })
   .put((req, res) => {
-    Post.update({
+    Project.update({
       author: req.body.author,
       title: req.body.title,
       link: req.body.link,
@@ -65,7 +65,7 @@ router.route('/:id')
         id : req.params.id
       }
     })
-    .then((post) => {
+    .then((project) => {
       console.log('req.params.id: ', req.params.id);
       res.redirect(`/portfolio/${req.params.id}`)
     })
@@ -75,14 +75,19 @@ router.route('/:id')
       });
   })
   .delete((req, res) => {
-    Post.destroy({
+    console.log('req.body: ', req.body);
+    Project.destroy({
       where: {
         id: req.params.id
       }
     })
-    .then((post) => {
+    .then((project) => {
       res.redirect('/portfolio')
     })
+     .catch((e) =>{
+        console.error(e);
+        res.json(e);
+      });
   });
 
 
@@ -91,5 +96,6 @@ router.route('/:id/edit')
   .get((req, res) => {
     res.render('edit', {id: req.params.id})
   })
+
 
 module.exports = router;
