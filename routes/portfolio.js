@@ -3,7 +3,8 @@ const router = express.Router();
 const db = require('../models');
 const Author = db.Author;
 const Project = db.Project;
-const Errors = require('../errors/errors');
+
+
 
 //index page
 router.route('/')
@@ -28,7 +29,6 @@ router.route('/')
         res.redirect('/portfolio');
       })
       .catch((e) =>{
-       console.log(Errors.whichError(e.errors[0].message));
        res.redirect('/portfolio/error');
       });
   });
@@ -36,7 +36,6 @@ router.route('/')
 //error page
 router.route('/error')
   .get((req,res) => {
-    console.log('req: ', req);
     res.render('validationErrors', {res: 'please fill out proper URL'})
   })
 

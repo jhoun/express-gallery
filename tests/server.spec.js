@@ -34,8 +34,8 @@ describe('POST /project', function() {
       if (err) {
         throw new Error(err);
       }
-      console.log('rest: ', res);
-      expect(res.header.location).to.equal('/products/new')
+      console.log('res.header: ', res.header);
+      expect(res.header.location).to.equal('/products/error')
       done()
     });
   })
