@@ -7,7 +7,6 @@ const db = require('./models');
 const Project = db.Project;
 const portfolio = require('./routes/portfolio');
 
-
 app.engine('.hbs', exphbs({
   extname: '.hbs',
   defaultLayout: 'main',
