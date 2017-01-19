@@ -4,6 +4,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override')
 const db = require('./models');
+const Project = db.Project;
 const portfolio = require('./routes/portfolio');
 
 
@@ -34,6 +35,13 @@ app.use((req, res, next) => {
 })
 
 app.use('/portfolio', portfolio);
+
+app.get('/', (req,res) => {
+    Project.findAll()
+    .then((project)  => {
+      res.render('index', {project});
+    })
+})
 
 app.listen(3000, function() {
   console.log('Server started on port 3000');
