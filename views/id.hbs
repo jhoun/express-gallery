@@ -7,11 +7,18 @@
   <li>Link: {{this.link}}</li>
   <li>Description: {{this.description}}</li>
   <br>
-{{/each}}
-</ul>
+<form form="form" action="/portfolio/{{id}}/edit" method="GET" enctype="x-www-form-urlencoded">
+  <input type="submit" value="edit">
+</form>
+<form form="form" action="/portfolio" method="GET" enctype="x-www-form-urlencoded">
+  <input type="submit" value="back">
+</form>
 
 
-<form form="form"  method="POST" enctype="x-www-form-urlencoded">
+<form form="form" method="POST" enctype="x-www-form-urlencoded">
   <input type="hidden" name="_method" value="DELETE">
   <input type="submit" value="delete">
 </form>
+{{/each}}
+</ul>
+
