@@ -1,13 +1,39 @@
+'use strict';
 module.exports = function(sequelize, DataTypes) {
-  var Project = sequelize.define("Project", {
-    author: DataTypes.STRING,
-    title: DataTypes.STRING,
-    link: DataTypes.STRING,
-    description: DataTypes.TEXT
+  var Project = sequelize.define('Project', {
+    author:{
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: true
+      }
+    },
+    title:{
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: true
+      }
+    },
+    link:{
+      type:DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: true,
+        isURL: true
+      }
+    },
+    description:{
+      type: DataTypes.TEXT,
+      allowNull: false,
+      validate: {
+        notEmpty:true
+      }
+    }
   }, {
     classMethods: {
       associate: function(models) {
-        Project.belongsTo(models.Author)
+        // associations can be defined here
       }
     }
   });

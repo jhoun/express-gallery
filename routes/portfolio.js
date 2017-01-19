@@ -17,6 +17,7 @@ router.route('/')
     });
   })
   .post((req,res) => {
+    console.log('req.body: ', req.body);
     Project.create({
       author: req.body.author,
       title: req.body.title,
@@ -24,6 +25,7 @@ router.route('/')
       description: req.body.description
     })
       .then((project) =>{
+        console.log('project: ', project);
         res.redirect('/portfolio');
       })
       .catch((e) =>{
