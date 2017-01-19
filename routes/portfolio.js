@@ -3,6 +3,7 @@ const router = express.Router();
 const db = require('../models');
 const Author = db.Author;
 const Project = db.Project;
+const Errors = require('../errors/errors');
 
 //index page
 router.route('/')
@@ -24,13 +25,20 @@ router.route('/')
       description: req.body.description
     })
       .then((project) =>{
-        console.log('project: ', project);
         res.redirect('/portfolio');
       })
       .catch((e) =>{
-        alert('hi');
+       console.log(Errors.whichError(e.errors[0].message));
+       res.redirect('/portfolio/error');
       });
   });
+
+//error page
+router.route('/error')
+  .get((req,res) => {
+    console.log('req: ', req);
+    res.render('validationErrors', {res: 'please fill out proper URL'})
+  })
 
 //new page
 router.route('/new')
@@ -75,7 +83,6 @@ router.route('/:id')
       });
   })
   .delete((req, res) => {
-    console.log('req.body: ', req.body);
     Project.destroy({
       where: {
         id: req.params.id

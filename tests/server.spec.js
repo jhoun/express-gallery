@@ -25,7 +25,7 @@ describe('POST /project', function() {
       });
   })
 
-  it('if object is empty then send user back to new article route', function(done){
+  it('if object is empty then send correct validation error', function(done){
     request(app)
     .post('/products')
     .type('form')
@@ -34,6 +34,7 @@ describe('POST /project', function() {
       if (err) {
         throw new Error(err);
       }
+      console.log('rest: ', res);
       expect(res.header.location).to.equal('/products/new')
       done()
     });
