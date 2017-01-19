@@ -9,7 +9,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       author: {
-        type: Sequelize.STRING
+        type: Sequelize.STRINdG
       },
       title: {
         type: Sequelize.STRING

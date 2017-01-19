@@ -42,9 +42,12 @@ app.get('/', (req,res) => {
     })
 })
 
-app.listen(3000, function() {
-  console.log('Server started on port 3000');
-  db.sequelize.sync();
-});
+
+if(!module.parent){
+    app.listen(8080, () => {
+    console.log('Server started on port 8080');
+    db.sequelize.sync();
+  });
+}
 
 module.exports = app;

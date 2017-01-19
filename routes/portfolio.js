@@ -17,7 +17,6 @@ router.route('/')
     });
   })
   .post((req,res) => {
-    console.log('req.body: ', req.body);
     Project.create({
       author: req.body.author,
       title: req.body.title,
@@ -29,8 +28,7 @@ router.route('/')
         res.redirect('/portfolio');
       })
       .catch((e) =>{
-        console.error(e);
-        res.json(e);
+        alert('hi');
       });
   });
 
