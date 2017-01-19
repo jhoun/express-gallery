@@ -9,13 +9,10 @@
   <li>Link: {{this.link}}</li>
   <li>Description: {{this.description}}</li>
   <br>
-<form form="form" action="/portfolio/{{id}}/edit" method="GET" enctype="x-www-form-urlencoded">
-  <input type="submit" value="edit">
-</form>
-<form form="form" action="/portfolio" method="GET" enctype="x-www-form-urlencoded">
-  <input type="submit" value="back">
-</form>
 
+<a href="/portfolio/{{id}}/edit"><button>edit</button></a>
+
+<a href="/portfolio"><button>Back</button></a>
 
 <form form="form" method="POST" enctype="x-www-form-urlencoded">
   <input type="hidden" name="_method" value="DELETE">

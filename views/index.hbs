@@ -1,7 +1,6 @@
 <h1>My Projects</h1>
-<form form="form" action="/portfolio/new" method="GET" enctype="x-www-form-urlencoded">
-  <input type="submit" value="Add New Project">
-</form>
+
+<a href="/portfolio/new"><button>New Project</button></a>
 
 <ul>
 {{#each project}}
@@ -9,9 +8,8 @@
   <li>Title: {{this.title}}</li>
   <li>Link: {{this.link}}</li>
   <li>Description: {{this.description}}</li>
-  <form form="form" action="/portfolio/{{id}}" method="GET" enctype="x-www-form-urlencoded">
-  <input type="submit" value="More Info">
-  </form>
+  <a href="/portfolio/{{id}}"><button>More Info</button></a>
+  <br>
   <br>
 {{/each}}
 </ul>
