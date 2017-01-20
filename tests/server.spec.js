@@ -25,19 +25,19 @@ describe('POST /project', function() {
       });
   })
 
-  it('if object is empty then send correct validation error', function(done){
-    request(app)
-    .post('/products')
-    .type('form')
-    .send({})
-    .end (function (err, res) {
-      if (err) {
-        throw new Error(err);
-      }
-      console.log('res.header: ', res.header);
-      expect(res.header.location).to.equal('/products/error')
-      done()
-    });
-  })
+  // it('if object is empty then send correct validation error', function(done){
+  //   request(app)
+  //   .post('/products')
+  //   .type('form')
+  //   .send({})
+  //   .end (function (err, res) {
+  //     if (err) {
+  //       throw new Error(err);
+  //     }
+  //     console.log('res.header: ', res.header);
+  //     expect(res.header.location).to.equal('/products/error')
+  //     done()
+  //   });
+  // })
 
 });

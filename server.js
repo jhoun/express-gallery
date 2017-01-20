@@ -6,6 +6,10 @@ const methodOverride = require('method-override')
 const db = require('./models');
 const Project = db.Project;
 const portfolio = require('./routes/portfolio');
+var session = require('express-session');
+var parseurl = require('parseurl');
+const LocalStrategy = require('passport-local').Strategy
+
 
 app.engine('.hbs', exphbs({
   extname: '.hbs',
@@ -35,10 +39,11 @@ app.use((req, res, next) => {
 
 app.use('/portfolio', portfolio);
 
+// When you want to get to '/'' path
 app.get('/', (req,res) => {
     Project.findAll()
     .then((project)  => {
-      res.render('index', {project});
+      res.render('portfolio/index', {project});
     })
 })
 

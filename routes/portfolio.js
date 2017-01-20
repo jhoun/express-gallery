@@ -1,17 +1,14 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../models');
-const Author = db.Author;
 const Project = db.Project;
-
-
 
 //index page
 router.route('/')
   .get((req, res) => {
     Project.findAll()
     .then((project)  => {
-      res.render('index', {project});
+      res.render('portfolio/index', {project});
     })
     .catch((e) =>{
       console.error(e);
@@ -36,13 +33,13 @@ router.route('/')
 //error page
 router.route('/error')
   .get((req,res) => {
-    res.render('validationErrors', {res: 'please fill out proper URL'})
+    res.render('portfolio/validationErrors', {res: 'please fill out proper URL'})
   })
 
 //new page
 router.route('/new')
   .get((req,res) => {
-    res.render('new');
+    res.render('portfolio/new');
   });
 
 //id page
@@ -54,7 +51,7 @@ router.route('/:id')
       }
     })
     .then((project) => {
-      res.render('id', {project})
+      res.render('portfolio/id', {project})
     })
     .catch((e) =>{
         console.error(e);
@@ -100,7 +97,7 @@ router.route('/:id')
 //edit page
 router.route('/:id/edit')
   .get((req, res) => {
-    res.render('edit', {id: req.params.id})
+    res.render('portfolio/edit', {id: req.params.id})
   })
 
 
