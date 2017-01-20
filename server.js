@@ -7,6 +7,7 @@ const db = require('./models');
 const Project = db.Project;
 const portfolio = require('./routes/portfolio');
 const register = require('./routes/register');
+const login = require('./routes/login');
 var session = require('express-session');
 var parseurl = require('parseurl');
 const LocalStrategy = require('passport-local').Strategy
@@ -40,6 +41,7 @@ app.use((req, res, next) => {
 
 app.use('/portfolio', portfolio);
 app.use('/register', register);
+app.use('/login', login);
 
 // When you want to get to '/'' path
 app.get('/', (req,res) => {
