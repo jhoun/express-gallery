@@ -8,10 +8,11 @@ const Project = db.Project;
 const portfolio = require('./routes/portfolio');
 const register = require('./routes/register');
 const login = require('./routes/login');
+const passport = require('passport');
 var session = require('express-session');
 var parseurl = require('parseurl');
 const LocalStrategy = require('passport-local').Strategy
-
+const CONFIG = require('./config/config')
 
 app.engine('.hbs', exphbs({
   extname: '.hbs',
@@ -25,6 +26,16 @@ app.set('views', 'views')
 app.use(bodyParser.urlencoded({
   extended:true
 }));
+
+var sess = {
+  secret: CONFIG.SESSION_SECRET,
+  resave: false,
+  saveUninitialized: true,
+}
+
+app.use(session(sess));
+
+app.use(passport.session());
 
 app.use(methodOverride(function (req, res) {
   if (req.body && typeof req.body === 'object' && '_method' in req.body) {
