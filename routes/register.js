@@ -5,10 +5,10 @@ const User = db.User;
 
 router.route('/')
   .get((req, res) => {
-    res.redirect('register/index');
+    res.render('register/index');
   })
   .post((req,res) => {
-    console.log('req: ', req);
+    console.log('req: ', req.body);
     User.create({
       first_name: req.body.first_name,
       last_name: req.body.last_name,
@@ -24,10 +24,6 @@ router.route('/')
       });
   });
 
-router.route('/index')
-  .get((req,res) => {
-    res.render('register/index');
-  })
 
 router.route('/success')
   .get((req,res) => {
