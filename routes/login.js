@@ -2,8 +2,32 @@ const express = require('express');
 const router = express.Router();
 const db = require('../models');
 const passport = require('passport');
-const LocalStrategy = require('passport-local').Strategy
-const CONFIG = require('../config/config')
+const LocalStrategy = require('passport-local').Strategy;
+const CONFIG = require('../config/config');
+const bcrypt = require('bcrypt');
+
+const saltRounds = 10;
+const myPlainTextPassword = "ILikeBacon";
+
+
+bcrypt.genSalt(saltRounds, (err,salt) => {
+  if (err) {
+    console.error(err);
+  }
+  //runs only when new user is registered
+  bcrypt.hash(myPlainTextPassword, salt, (err, hash) => {
+    // save this hash to your DB
+    console.log('hash: ', hash);
+
+  bcrypt.compare(myPlainTextPassword, hash, (err, result) => {
+      if (err){
+        console.error(err);
+      }
+      //if it's the same - returns true
+      console.log('result1: ', result);
+    });
+  });
+});
 
 const authenticate = (username, password) => {
 

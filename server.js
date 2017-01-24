@@ -13,6 +13,7 @@ const session = require('express-session');
 const parseurl = require('parseurl');
 // const LocalStrategy = require('passport-local').Strategy
 const CONFIG = require('./config/config')
+const bcrypt = require('bcrypt');
 
 app.engine('.hbs', exphbs({
   extname: '.hbs',
