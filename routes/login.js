@@ -8,8 +8,6 @@ const CONFIG = require('../config/config')
 const authenticate = (username, password) => {
 
   // get user data from DB ** THE ONLY THING YOU NEED TO CHANGE WHEN YOU ARE IN EXPRESS-GALLERY
-  console.log('username: ', username);
-  console.log('password: ', password);
   return db.User.findOne({
     where:{username}
   })
