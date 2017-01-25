@@ -14,6 +14,7 @@ const parseurl = require('parseurl');
 const LocalStrategy = require('passport-local').Strategy
 const CONFIG = require('./config/config')
 const bcrypt = require('bcrypt');
+const RedisStore = require('connect-redis')(session);
 
 app.engine('.hbs', exphbs({
   extname: '.hbs',
@@ -24,11 +25,14 @@ app.set('view engine', '.hbs');
 
 app.set('views', 'views')
 
+app.use(express.static('public'));
+
 app.use(bodyParser.urlencoded({
   extended:true
 }));
 
 var sess = {
+  store: new RedisStore(),
   secret: CONFIG.SESSION_SECRET,
   resave: false,
   saveUninitialized: true,
