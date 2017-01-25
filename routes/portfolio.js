@@ -33,7 +33,7 @@ router.route('/')
 //error page
 router.route('/error')
   .get((req,res) => {
-    res.render('portfolio/validationErrors', {messages: req.flash('info') })
+    res.render('portfolio/validationErrors', {res: 'please fill out proper URL'})
   })
 
 //new page

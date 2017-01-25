@@ -1,5 +1,6 @@
 const express = require('express');
 const exphbs = require('express-handlebars');
+const app = express();
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override')
 const db = require('./models');
@@ -14,11 +15,6 @@ const parseurl = require('parseurl');
 const CONFIG = require('./config/config')
 const bcrypt = require('bcrypt');
 
-var flash = require('connect-flash');
-const cookieParser = require('cookie-parser')
-// const flash = require('connect-flash-plus');
-const app = express();
-
 app.engine('.hbs', exphbs({
   extname: '.hbs',
   defaultLayout: 'main',
@@ -32,15 +28,11 @@ app.use(bodyParser.urlencoded({
   extended:true
 }));
 
-app.use(cookieParser());
 var sess = {
-  cookie: { maxAge: 60000 },
   secret: CONFIG.SESSION_SECRET,
   resave: false,
   saveUninitialized: true,
 }
-
-app.use(flash());
 
 app.use(session(sess));
 
@@ -61,7 +53,6 @@ app.use(methodOverride(function (req, res) {
 app.use((req, res, next) => {
   next('route');
 })
-
 
 app.use('/portfolio', portfolio);
 app.use('/register', register);
