@@ -10,8 +10,9 @@ const register = require('./routes/register');
 const login = require('./routes/login');
 const passport = require('passport');
 const session = require('express-session');
+const RedisStore = require('connect-redis')(session);
 const parseurl = require('parseurl');
-// const LocalStrategy = require('passport-local').Strategy
+const LocalStrategy = require('passport-local').Strategy
 const CONFIG = require('./config/config')
 const bcrypt = require('bcrypt');
 
@@ -29,6 +30,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 var sess = {
+  store: new RedisStore(),
   secret: CONFIG.SESSION_SECRET,
   resave: false,
   saveUninitialized: true,
