@@ -16,6 +16,7 @@ router.route('/')
     });
   })
   .post((req,res) => {
+    console.log('re1: ', req.body);
     Project.create({
       author: req.body.author,
       title: req.body.title,

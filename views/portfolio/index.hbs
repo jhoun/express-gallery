@@ -1,5 +1,5 @@
 <div class="headContainer">
-  <h1>Jay Houn's Programming Portfolio</h1>
+  <div class="header">Jay Houn's Programming Portfolio</div>
 </div>
 <a href="/portfolio/new"><button>New Project</button></a>
 
@@ -7,8 +7,10 @@
   <div class="bodyContainer">
     <div class="title">{{this.title}}</div>
     <img src="{{this.author}}">
-    <div class="link"> {{this.link}}</div>
-    <div>Description: {{this.description}}</div>
+    <div class="description"><strong>Description:</strong> {{this.description}}</div>
+
+    <div class="link"><strong>Github Repository:</strong><a href="{{this.link}}">{{this.link}}</a></div>
+
     <a href="/portfolio/{{id}}"><button>More Info</button></a>
   </div>
 {{/each}}

@@ -4,27 +4,43 @@ html, body {
   box-sizing: border-box; }
 
 body {
-  background: #f7f6ef; }
+  background: transparent;
+  font-family: 'Droid Sans', sans-serif; }
 
 #navContainer {
-  background-color: green;
+  /* background-color: green; */
   margin-top: 100px;
-  position: absolute; }
+  position: absolute;
+  color: #289b86; }
+  #navContainer div {
+    margin: 10px; }
+
+#footer {
+  text-align: right; }
 
 .headContainer {
   margin-left: 150px;
   border-bottom: 1px solid grey; }
-  .headContainer h1 {
-    font-family: 'Droid Sans', sans-serif;
-    color: grey; }
+  .headContainer .header {
+    font-size: 1.7em;
+    color: grey;
+    margin: 30px 0px 20px 0; }
 
 .bodyContainer {
-  background-color: blue;
+  /* background-color: blue; */
   margin: 0px 0px 30px 150px; }
   .bodyContainer .title {
-    font-family: 'Droid Sans', sans-serif;
     font-size: 2em;
-    color: #A9A9A9; }
+    color: #404040;
+    margin-bottom: 7px;
+    text-align: center; }
   .bodyContainer img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     height: 300px;
     width: 400px; }
+  .bodyContainer .description {
+    margin: 20px 0px 20px 0px;
+    color: #515151;
+    font-size: 1.5em; }
