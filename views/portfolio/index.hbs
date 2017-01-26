@@ -1,15 +1,15 @@
-<h1>My Projects</h1>
-
+<div class="headContainer">
+  <h1>Jay Houn's Programming Portfolio</h1>
+</div>
 <a href="/portfolio/new"><button>New Project</button></a>
 
-<ul>
 {{#each project}}
-  <li>Author: {{this.author}}</li>
-  <li>Title: {{this.title}}</li>
-  <li>Link: {{this.link}}</li>
-  <li>Description: {{this.description}}</li>
-  <a href="/portfolio/{{id}}"><button>More Info</button></a>
-  <br>
-  <br>
+  <div class="bodyContainer">
+    <div class="title">{{this.title}}</div>
+    <img src="{{this.author}}">
+    <div class="link"> {{this.link}}</div>
+    <div>Description: {{this.description}}</div>
+    <a href="/portfolio/{{id}}"><button>More Info</button></a>
+  </div>
 {{/each}}
-</ul>
+

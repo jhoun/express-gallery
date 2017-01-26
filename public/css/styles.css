@@ -1,2 +1,30 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
 body {
-  background: green; }
+  background: #f7f6ef; }
+
+#navContainer {
+  background-color: green;
+  margin-top: 100px;
+  position: absolute; }
+
+.headContainer {
+  margin-left: 150px;
+  border-bottom: 1px solid grey; }
+  .headContainer h1 {
+    font-family: 'Droid Sans', sans-serif;
+    color: grey; }
+
+.bodyContainer {
+  background-color: blue;
+  margin: 0px 0px 30px 150px; }
+  .bodyContainer .title {
+    font-family: 'Droid Sans', sans-serif;
+    font-size: 2em;
+    color: #A9A9A9; }
+  .bodyContainer img {
+    height: 300px;
+    width: 400px; }
