@@ -16,7 +16,6 @@ router.route('/')
     });
   })
   .post((req,res) => {
-    console.log('req: ', req.body);
     Project.create({
       title: req.body.title,
       description: req.body.description,

@@ -28,8 +28,15 @@ module.exports = function(sequelize, DataTypes) {
       validate: {
         notEmpty: true
         }
+      },
+    admin: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: true
       }
-    }, {
+    }
+  }, {
     classMethods: {
       associate: function(models) {
         // associations can be defined here
