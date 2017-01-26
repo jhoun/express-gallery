@@ -10,11 +10,12 @@
 {{#each project}}
   <div class="bodyContainer">
     <div class="title">{{this.title}}</div>
-    <img src="{{this.author}}">
+    <img src="{{this.image}}">
     <div class="description"><strong>Description:</strong> {{this.description}}</div>
 
     <div class="link"><strong>Github Repository:</strong><a href="{{this.link}}">{{this.link}}</a></div>
-    {{#if user.admin}}
+
+    {{#if ../user.admin}}
       <a href="/portfolio/{{id}}"><button>More Info</button></a>
     {{/if}}
   </div>

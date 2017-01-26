@@ -7,8 +7,9 @@ module.exports = {
       last_name: 'doe',
       username: 'johnnydoe',
       password: '1w809urjsoejr[woejir',
-      createdAt: new Date(),
-      updatedAt: new Date()
+      createdAt : new Date(),
+      updatedAt : new Date(),
+      admin: true
     }], {});
   },
 

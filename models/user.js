@@ -30,8 +30,12 @@ module.exports = function(sequelize, DataTypes) {
         }
       },
     admin: {
-      type: DataTypes.STRING,
-      allowNull: false
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
+      allowNull: false,
+      validate: {
+        notEmpty: true
+      }
     }
   }, {
     classMethods: {
