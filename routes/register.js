@@ -11,6 +11,7 @@ router.route('/')
     res.render('register/index');
   })
   .post((req,res, next) => {
+    console.log('req.body: ', req.body);
     bcrypt.genSalt(saltRounds, (err,salt) => {
       if (err) {
         console.error(err)
@@ -25,7 +26,8 @@ router.route('/')
           first_name: req.body.first_name,
           last_name: req.body.last_name,
           username: req.body.username,
-          password: hash
+          password: hash,
+          admin: req.body.admin
         })
         res.redirect('register/success');
       })
