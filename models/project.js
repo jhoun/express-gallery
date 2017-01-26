@@ -1,13 +1,6 @@
 'use strict';
 module.exports = function(sequelize, DataTypes) {
   var Project = sequelize.define('Project', {
-    author:{
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        notEmpty: true
-      }
-    },
     title:{
       type: DataTypes.STRING,
       allowNull: false,
@@ -28,6 +21,14 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       validate: {
         notEmpty:true
+      }
+    },
+    image:{
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: true,
+        isURL: true
       }
     }
   }, {

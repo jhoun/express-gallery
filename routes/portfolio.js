@@ -16,12 +16,12 @@ router.route('/')
     });
   })
   .post((req,res) => {
-    console.log('re1: ', req.body);
+    console.log('req: ', req.body);
     Project.create({
-      author: req.body.author,
       title: req.body.title,
-      link: req.body.link,
-      description: req.body.description
+      description: req.body.description,
+      image: req.body.image,
+      link: req.body.link
     })
       .then((project) =>{
         res.redirect('/portfolio');
@@ -34,7 +34,7 @@ router.route('/')
 //error page
 router.route('/error')
   .get((req,res) => {
-    res.render('portfolio/validationErrors', {messages: req.flash('info') })
+    res.render('portfolio/validationErrors', {req: "error!" })
   })
 
 //new page
