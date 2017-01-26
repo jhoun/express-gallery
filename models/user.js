@@ -31,11 +31,8 @@ module.exports = function(sequelize, DataTypes) {
       },
     admin: {
       type: DataTypes.BOOLEAN,
-      defaultValue: false,
-      allowNull: false,
-      validate: {
-        notEmpty: true
-      }
+      defaultValue: null,
+      allowNull: true
     }
   }, {
     classMethods: {

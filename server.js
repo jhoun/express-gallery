@@ -8,6 +8,7 @@ const Project = db.Project;
 const portfolio = require('./routes/portfolio');
 const register = require('./routes/register');
 const login = require('./routes/login');
+const logout = require('./routes/logout');
 const passport = require('passport');
 const session = require('express-session');
 const parseurl = require('parseurl');
@@ -60,6 +61,7 @@ app.use((req, res, next) => {
 app.use('/portfolio', portfolio);
 app.use('/register', register);
 app.use('/login', login);
+app.use('/logout', logout);
 
 // When you want to get to '/'' path
 app.get('/', (req,res) => {

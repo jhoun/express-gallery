@@ -15,11 +15,13 @@ const authenticate = (username, password) => {
     where:{username}
   })
     .then((user) => {
+      console.log('user: ', user.id);
       if (user === null) {
         throw Error("invalid user")
       }
       return bcrypt.compareAsync(password, user.password)
       .then((isValid) =>{
+        console.log('isValid: ', isValid);
         if(isValid){
           return user;
         } else {

@@ -5,20 +5,6 @@ const User = db.User;
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
 
-// const ifJay = (req, res, next) => {
-//   if(req.res.first_name === 'jay'){
-//     User.create({
-//       first_name: req.body.first_name,
-//       last_name: req.body.last_name,
-//       username: req.body.username,
-//       password: hash,
-//       admin: true
-//     })
-//   } else {
-//   next()
-//   }
-// }
-
 
 router.route('/')
   .get((req, res) => {

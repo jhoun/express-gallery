@@ -10,8 +10,7 @@ router.route('/')
   .get((req, res) => {
     Project.findAll()
     .then((project)  => {
-      console.log('req.user: ', req.user);
-      res.render('portfolio/index', {project, user: req.user});
+      res.render('portfolio/index', {project, use: req.user});
     })
     .catch((e) =>{
       console.error(e);
