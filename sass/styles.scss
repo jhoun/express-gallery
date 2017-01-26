@@ -32,12 +32,14 @@ body {
     #aboutParagraph {
       margin: 15px 5px 0px 10px;
       color: #6A6A68;
+      font-family: 'Lato', sans-serif;
     }
   }
 }
 
 #footer {
   text-align: right;
+  margin-right: 20px;
 }
 
 .headContainer {
@@ -54,7 +56,7 @@ body {
 
 .bodyContainer {
   /* background-color: blue; */
-  margin: 0px 0px 30px 235px;
+  margin: 0px 20px 30px 235px;
 
   .title {
 
@@ -75,7 +77,8 @@ body {
   .description {
     margin: 20px 0px 20px 0px;
     color: #515151;
-    font-size: 1.5em;
+    font-size: 1.1em;
+    font-family: 'Lato', sans-serif;
   }
 
 }
