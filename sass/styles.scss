@@ -9,15 +9,30 @@ body {
   font-family: 'Droid Sans', sans-serif;
 }
 
-#navContainer{
-  /* background-color: green; */
+#headerContainer {
   margin-top: 100px;
   position: absolute;
   color: #289b86;
 
+  #navContainer {
+    /* background-color: green; */
 
-  div {
-    margin: 10px;
+    div {
+      margin: 10px;
+    }
+  }
+  #shortAbout {
+    margin-top: 50px;
+
+    #aboutTitle {
+      margin-left: 10px;
+      color: #262626;
+    }
+
+    #aboutParagraph {
+      margin: 15px 5px 0px 10px;
+      color: #6A6A68;
+    }
   }
 }
 
@@ -27,7 +42,7 @@ body {
 
 .headContainer {
 
-  margin-left: 150px;
+  margin-left: 235px;
   border-bottom: 1px solid grey;
 
   .header {
@@ -39,7 +54,7 @@ body {
 
 .bodyContainer {
   /* background-color: blue; */
-  margin: 0px 0px 30px 150px;
+  margin: 0px 0px 30px 235px;
 
   .title {
 

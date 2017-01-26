@@ -7,19 +7,28 @@ body {
   background: transparent;
   font-family: 'Droid Sans', sans-serif; }
 
-#navContainer {
-  /* background-color: green; */
+#headerContainer {
   margin-top: 100px;
   position: absolute;
   color: #289b86; }
-  #navContainer div {
-    margin: 10px; }
+  #headerContainer #navContainer {
+    /* background-color: green; */ }
+    #headerContainer #navContainer div {
+      margin: 10px; }
+  #headerContainer #shortAbout {
+    margin-top: 50px; }
+    #headerContainer #shortAbout #aboutTitle {
+      margin-left: 10px;
+      color: #262626; }
+    #headerContainer #shortAbout #aboutParagraph {
+      margin: 15px 5px 0px 10px;
+      color: #6A6A68; }
 
 #footer {
   text-align: right; }
 
 .headContainer {
-  margin-left: 150px;
+  margin-left: 235px;
   border-bottom: 1px solid grey; }
   .headContainer .header {
     font-size: 1.7em;
@@ -28,7 +37,7 @@ body {
 
 .bodyContainer {
   /* background-color: blue; */
-  margin: 0px 0px 30px 150px; }
+  margin: 0px 0px 30px 235px; }
   .bodyContainer .title {
     font-size: 2em;
     color: #404040;
