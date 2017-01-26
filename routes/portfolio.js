@@ -2,13 +2,16 @@ const express = require('express');
 const router = express.Router();
 const db = require('../models');
 const Project = db.Project;
+const User = db.User;
+
 
 //index page
 router.route('/')
   .get((req, res) => {
     Project.findAll()
     .then((project)  => {
-      res.render('portfolio/index', {project});
+      console.log('req.user: ', req.user);
+      res.render('portfolio/index', {project, user: req.user});
     })
     .catch((e) =>{
       console.error(e);

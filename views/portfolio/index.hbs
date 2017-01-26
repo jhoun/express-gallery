@@ -1,7 +1,11 @@
 <div class="headContainer">
   <div class="header">Jay Houn's Programming Portfolio</div>
 </div>
-<a href="/portfolio/new"><button>New Project</button></a>
+
+{{#if user.admin}}
+  <a href="/portfolio/new"><button>New Project</button></a>
+{{/if}}
+
 
 {{#each project}}
   <div class="bodyContainer">
@@ -10,8 +14,9 @@
     <div class="description"><strong>Description:</strong> {{this.description}}</div>
 
     <div class="link"><strong>Github Repository:</strong><a href="{{this.link}}">{{this.link}}</a></div>
-
-    <a href="/portfolio/{{id}}"><button>More Info</button></a>
+    {{#if user.admin}}
+      <a href="/portfolio/{{id}}"><button>More Info</button></a>
+    {{/if}}
   </div>
 {{/each}}
 

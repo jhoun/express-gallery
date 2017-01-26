@@ -31,10 +31,7 @@ module.exports = function(sequelize, DataTypes) {
       },
     admin: {
       type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        notEmpty: true
-      }
+      allowNull: false
     }
   }, {
     classMethods: {
