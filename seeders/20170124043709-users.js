@@ -9,8 +9,8 @@ const newPassword = bcrypt.hashSync(CONFIG.seedPassword, salt)
 module.exports = {
   up: function (queryInterface, Sequelize) {
     return queryInterface.bulkInsert('Users', [{
-      first_name: 'John',
-      last_name: 'doe',
+      first_name: 'Jay',
+      last_name: 'houn',
       username: 'jay',
       password: newPassword,
       createdAt : new Date(),

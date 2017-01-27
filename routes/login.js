@@ -15,7 +15,6 @@ const authenticate = (username, password) => {
     where:{username}
   })
     .then((user) => {
-      console.log('user: ', user.id);
       if (user === null) {
         throw Error("invalid user")
       }
