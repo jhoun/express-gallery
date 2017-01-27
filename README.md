@@ -23,12 +23,10 @@ Any user should be able to access these routes:
 
 ---
 
-The layout of the app must match the layouts included in `/layouts`.
-Match the layout as close as you can, using free and open fonts and graphics.
+Setting up the project:
+
+1)Clone with SSH Link
+2)Config.json
 
 ---
 
-#### Responsive Layout
-
-- does not have tablet layout
-- uses a background image that is not included, you will have to find something similar (subtlepatterns.com)
