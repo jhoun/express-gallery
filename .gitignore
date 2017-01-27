@@ -17,5 +17,5 @@ node_modules
 bower_components
 *.DS_Store
 
-config/config.js
+config/config.json
 dump.rdb
