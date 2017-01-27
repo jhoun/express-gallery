@@ -71,10 +71,9 @@ app.use('/logout', logout);
 
 // When you want to get to '/'' path
 app.get('/', (req,res) => {
-  console.log('req: ', req);
     Project.findAll()
     .then((project)  => {
-      res.render('portfolio/index', {project, messages: req.flash('info')});
+      res.render('portfolio/index');
     })
 })
 

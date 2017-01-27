@@ -1,18 +1,7 @@
-module.exports = (function(){
-
-var errors = [];
-
-  var _whichError = function(err){
-    if (err === 'Validation isURL failed'){
-      errors.push("please fix URL");
-      return errors;
-    } else if(err === 'Validation notEmpty failed'){
-      return "please no empty";
-    }
+module.exports = function whichError(errMessage, req){
+  if (errMessage === 'Validation isURL failed'){
+    req.flash('message', 'Please input valid URL');
+  } else {
+    req.flash('message', 'Please do not leave fields empty');
   }
-
-return {
-  whichError: _whichError
 }
-
-})();

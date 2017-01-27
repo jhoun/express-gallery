@@ -3,7 +3,7 @@ const router = express.Router();
 const db = require('../models');
 const Project = db.Project;
 const User = db.User;
-
+const whichError  = require('../errors/errors')
 
 //index page
 router.route('/')
@@ -29,12 +29,7 @@ router.route('/')
         res.redirect('/portfolio');
       })
       .catch((e) =>{
-        console.log('e: ', e.errors[0].message);
-        if (e.errors[0].message === 'Validation isURL failed'){
-          req.flash('message', 'Please input valid URL');
-        } else {
-          req.flash('message', 'Please do not leave fields unfilled');
-        }
+        whichError(e.errors[0].message, req);
        res.redirect('/portfolio/new');
       });
   });
