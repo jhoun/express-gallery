@@ -1,13 +1,4 @@
-Express Gallery
-===============
-
-Express, Sequelize, HTML5, stored on PostgreSQL
-
-Use the Express, Sequelize, and *almost* any other library or templating engines you want to fulfill the requirements.
-recommended: Handbars and SASS.
-helpful: Livereload, Gulp for watching compiling SASS
-
----
+![alt tag](http://i.imgur.com/P229Sa7.png)
 
 Create a multi-user Gallery.
 Any user should be able to access these routes:

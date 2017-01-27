@@ -4,11 +4,14 @@
 
 <ul>
 {{#each project}}
-  <li>Author: {{this.author}}</li>
-  <li>Title: {{this.title}}</li>
-  <li>Link: {{this.link}}</li>
-  <li>Description: {{this.description}}</li>
-  <br>
+  <div class="bodyContainer">
+    <div class="title">{{this.title}}</div>
+    <img src="{{this.image}}">
+    <div class="description"><strong>Description:</strong> {{this.description}}</div>
+
+    <div class="link"><strong>Github Repository:</strong><a href="{{this.link}}">{{this.link}}</a></div>
+
+  </div>
 
 <a href="/portfolio/{{id}}/edit"><button>edit</button></a>
 

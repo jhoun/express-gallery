@@ -10,7 +10,7 @@ router.route('/')
   .get((req, res) => {
     Project.findAll()
     .then((project)  => {
-      res.render('portfolio/index', {project, use: req.user});
+      res.render('portfolio/index', {project, user: req.user});
     })
     .catch((e) =>{
       console.error(e);
@@ -62,10 +62,10 @@ router.route('/:id')
   })
   .put((req, res) => {
     Project.update({
-      author: req.body.author,
       title: req.body.title,
-      link: req.body.link,
-      description: req.body.link
+      description: req.body.description,
+      image: req.body.image,
+      link: req.body.link
     } , {
       where: {
         id : req.params.id
