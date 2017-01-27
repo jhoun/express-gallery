@@ -33,7 +33,7 @@ Any user should be able to access these routes:
 
 Setting up the project:
 
-1. Clone with SSH Link to your local machine
+1. Clone with SSH to your local machine
 1. create a database in your psql
 1. Create config/config.json file
   - copy template from config-example.json to your new config.json file
