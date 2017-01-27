@@ -42,7 +42,5 @@ Setting up the project:
 1. run db:seed
 1. run gulp
 
-** Comment out code in partials/header.hbs, when creating new project, edit, and registering. I'm still fixing up the css for those pages.
-
 ---
 
