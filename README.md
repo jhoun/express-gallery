@@ -38,8 +38,8 @@ Setting up the project:
 1. Create config/config.json file
   - copy template from config-example.json to your new config.json file
   - Fill in appropriate inputs
-1. run db:migrate
-1. run db:seed
+1. run sequelize db:migrate
+1. run sequelize db:seed:all
 1. run gulp
 
 ---
