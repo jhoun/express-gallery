@@ -41,7 +41,6 @@ Setting up the project:
 1. run db:migrate
 1. run db:seed
 1. run redis-server
-1. run redis-cli
 1. run gulp
 1. run nodemon server.js
 
