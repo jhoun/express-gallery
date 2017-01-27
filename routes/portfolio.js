@@ -31,9 +31,9 @@ router.route('/')
       .catch((e) =>{
         console.log('e: ', e.errors[0].message);
         if (e.errors[0].message === 'Validation isURL failed'){
-          req.flash('error1', 'please put real url');
+          req.flash('message', 'Please input valid URL');
         } else {
-          req.flash('error2', 'adsfasd');
+          req.flash('message', 'Please do not leave fields unfilled');
         }
        res.redirect('/portfolio/new');
       });
@@ -49,8 +49,7 @@ router.route('/error')
 router.route('/new')
   .get((req,res) => {
     res.render('portfolio/new', {
-      error1: req.flash('error1'),
-      error2: req.flash('error2')
+      message: req.flash('message')
     });
   });
 
