@@ -1,6 +1,9 @@
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var connect = require('gulp-connect');
+const gulp = require('gulp');
+const sass = require('gulp-sass');
+const connect = require('gulp-connect');
+const nodemon = require('gulp-nodemon');
+const child_process = require('child_process');
+
 
 gulp.task('connect', function(){
   connect.server({
@@ -26,4 +29,23 @@ gulp.task('watch', function () {
   gulp.watch('./public/**/*', ['livereload']);
 });
 
-gulp.task('default', ['connect', 'watch', 'sass']);
+gulp.task('start', function () {
+  nodemon({
+    script: 'server.js'
+  , ext: 'js html'
+  , env: { 'NODE_ENV': 'development' }
+  })
+})
+
+gulp.task('redis-start', function() {
+  child_process.exec('redis-server', function(err, stdout, stderr) {
+    console.log(stdout);
+    if (err !== null) {
+      console.log('exec error: ' + err);
+    }
+  });
+});
+
+
+gulp.task('default', ['connect', 'watch', 'sass', 'start',
+'redis-start']);

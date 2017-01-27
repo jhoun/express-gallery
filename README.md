@@ -40,9 +40,7 @@ Setting up the project:
   - Fill in appropriate inputs
 1. run db:migrate
 1. run db:seed
-1. run redis-server
 1. run gulp
-1. run nodemon server.js
 
 ** Comment out code in partials/header.hbs, when creating new project, edit, and registering. I'm still fixing up the css for those pages.
 
