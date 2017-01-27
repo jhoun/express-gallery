@@ -39,6 +39,7 @@ gulp.task('start', function () {
 
 gulp.task('redis-start', function() {
   child_process.exec('redis-server', function(err, stdout, stderr) {
+    process.on('exit', stopRedis);
     console.log(stdout);
     if (err !== null) {
       console.log('exec error: ' + err);
@@ -49,3 +50,13 @@ gulp.task('redis-start', function() {
 
 gulp.task('default', ['connect', 'watch', 'sass', 'start',
 'redis-start']);
+
+function stopRedis(){
+  child_process.exec('redis-cli shutdown', function(err, stdout, stderr) {
+    console.log(stdout);
+    console.log('stopping redis server');
+    if (err !== null) {
+      console.log('exec error: ' + err);
+    }
+  });
+}

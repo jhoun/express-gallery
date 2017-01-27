@@ -10,6 +10,7 @@ router.route('/')
   .get((req, res) => {
     Project.findAll()
     .then((project)  => {
+      console.log('req.user: ', req.user);
       res.render('portfolio/index', {project, user: req.user});
     })
     .catch((e) =>{
@@ -28,7 +29,13 @@ router.route('/')
         res.redirect('/portfolio');
       })
       .catch((e) =>{
-       res.redirect('/portfolio/error');
+        console.log('e: ', e.errors[0].message);
+        if (e.errors[0].message === 'Validation isURL failed'){
+          req.flash('error1', 'please put real url');
+        } else {
+          req.flash('error2', 'adsfasd');
+        }
+       res.redirect('/portfolio/new');
       });
   });
 
@@ -41,7 +48,10 @@ router.route('/error')
 //new page
 router.route('/new')
   .get((req,res) => {
-    res.render('portfolio/new');
+    res.render('portfolio/new', {
+      error1: req.flash('error1'),
+      error2: req.flash('error2')
+    });
   });
 
 //id page

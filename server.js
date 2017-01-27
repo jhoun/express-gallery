@@ -15,6 +15,8 @@ const parseurl = require('parseurl');
 const LocalStrategy = require('passport-local').Strategy
 const CONFIG = require('./config/config')
 const RedisStore = require('connect-redis')(session);
+const cookieParser = require('cookie-parser');
+const flash = require('connect-flash');
 
 app.engine('.hbs', exphbs({
   extname: '.hbs',
@@ -31,7 +33,8 @@ app.use(bodyParser.urlencoded({
   extended:true
 }));
 
-var sess = {
+const sess = {
+  cookie: { maxAge: 6000},
   store: new RedisStore(),
   secret: CONFIG.SESSION_SECRET,
   resave: false,
@@ -44,7 +47,6 @@ app.use(passport.initialize());
 
 app.use(passport.session());
 
-
 app.use(methodOverride(function (req, res) {
   if (req.body && typeof req.body === 'object' && '_method' in req.body) {
     // look in urlencoded POST bodies and delete it
@@ -53,6 +55,10 @@ app.use(methodOverride(function (req, res) {
     return method
   }
 }));
+
+app.use(cookieParser());
+
+app.use(flash());
 
 app.use((req, res, next) => {
   next('route');
@@ -65,11 +71,17 @@ app.use('/logout', logout);
 
 // When you want to get to '/'' path
 app.get('/', (req,res) => {
+  console.log('req: ', req);
     Project.findAll()
     .then((project)  => {
-      res.render('portfolio/index', {project});
+      res.render('portfolio/index', {project, messages: req.flash('info')});
     })
 })
+
+app.get('/flash', function(req, res){
+  req.flash('info', ['Hi there!', 'suck it']);
+  res.redirect('/');
+});
 
 
 if(!module.parent){
