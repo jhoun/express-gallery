@@ -25,8 +25,13 @@ Any user should be able to access these routes:
 
 Setting up the project:
 
-1)Clone with SSH Link
-2)Config.json
+1) Clone with SSH Link
+1) Create config/config.json file
+  - copy template from config-example.json to your new config.json file
+  -
+1)
+
+
 
 ---
 
