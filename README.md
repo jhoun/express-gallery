@@ -25,13 +25,17 @@ Any user should be able to access these routes:
 
 Setting up the project:
 
-1) Clone with SSH Link
-1) Create config/config.json file
+1. Clone with SSH Link to your local machine
+1. create a database in your psql
+1. Create config/config.json file
   - copy template from config-example.json to your new config.json file
-  -
-1)
-
-
+  - Fill in appropriate inputs
+1. run db:migrate
+1. run db:seed
+1. run redis-server
+1. run redis-cli
+1. run gulp
+1. run nodemon server.js
 
 ---
 
