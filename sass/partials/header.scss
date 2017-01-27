@@ -1,0 +1,27 @@
+#headerContainer {
+  margin-top: 170px;
+  position: absolute;
+  color: #289b86;
+
+  #navContainer {
+    /* background-color: green; */
+
+    div {
+      margin: 10px;
+    }
+  }
+  #shortAbout {
+    margin-top: 50px;
+
+    #aboutTitle {
+      margin-left: 10px;
+      color: #262626;
+    }
+
+    #aboutParagraph {
+      margin: 15px 5px 0px 10px;
+      color: #6A6A68;
+      font-family: 'Lato', sans-serif;
+    }
+  }
+}
