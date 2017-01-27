@@ -1,4 +1,12 @@
+#Portfolio#
+
+--
+
+Express, Sequelize, HTML5, stored on PostgreSQL
+
 ![alt tag](http://i.imgur.com/P229Sa7.png)
+
+--
 
 Create a multi-user Gallery.
 Any user should be able to access these routes:
@@ -36,6 +44,8 @@ Setting up the project:
 1. run redis-cli
 1. run gulp
 1. run nodemon server.js
+
+** Comment out code in partials/header.hbs, when creating new project, edit, and registering. I'm still fixing up the css for those pages.
 
 ---
 
