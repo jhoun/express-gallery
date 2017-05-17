@@ -1,36 +1,37 @@
 .banner {
   color: #fff;
   background: #3acec2;
-  padding: 3.2em 0;
+  padding: 5em 0;
+  margin-top: 30px;
   margin-bottom: 48px;
   text-align: center;
+
+  .headline {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
 }
 
+.body-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-left: 30px;
+  margin-right: 30px;
 
+  .project-container {
+    margin-left: 30px;
+    margin-right: 30px;
 
-.bodyContainer {
+    img {
+      height: 300px;
+      width: 400px;
+    }
 
-  .title {
-
-    font-size: 2em;
-    color: #404040;
-    margin-bottom: 7px;
-    text-align: center;
+    .title {
+      font-size: 2em;
+      color: #404040;
+      text-align: center;
+    }
   }
-
-  img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto ;
-    height: 300px;
-    width: 400px;
-  }
-
-  .description {
-    margin: 20px 0px 20px 0px;
-    color: #515151;
-    font-size: 1.1em;
-    font-family: 'Lato', sans-serif;
-  }
-
 }

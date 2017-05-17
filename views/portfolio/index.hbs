@@ -7,17 +7,18 @@
   <h1 class="headline"> I am an art director. I am a designer.I like fun projects. I like fun people. I like art directing and designing fun projects with fun people.</h1>
 </div>
 
-{{#each project}}
-  <div class="bodyContainer">
-    <div class="title">{{this.title}}</div>
-    <img src="{{this.image}}">
-    <div class="description"><strong>Description:</strong> {{this.description}}</div>
+<div class="body-container">
+  {{#each project}}
+      <div class="project-container">
+        <a href="/portfolio/{{id}}"><img src="{{this.image}}"></a>
+        <div class="title">{{this.title}}</div>
 
-    <div class="link"><strong>Github Repository:</strong><a href="{{this.link}}">{{this.link}}</a></div>
 
-    {{#if ../user.admin}}
-      <a href="/portfolio/{{id}}"><button>More Info</button></a>
-    {{/if}}
-  </div>
-{{/each}}
+        {{#if ../user.admin}}
+          <a href="/portfolio/{{id}}"><button>More Info</button></a>
+        {{/if}}
+      </div>
+  {{/each}}
+</div>
 
+       {{!--  <div class="link"><strong>Github Repository:</strong><a href="{{this.link}}">{{this.link}}</a></div> --}}

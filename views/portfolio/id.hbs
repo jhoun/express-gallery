@@ -13,14 +13,15 @@
 
   </div>
 
-<a href="/portfolio/{{id}}/edit"><button>edit</button></a>
+  <a href="/portfolio"><button>Back</button></a>
+  {{#if ../user.admin}}
+    <a href="/portfolio/{{id}}/edit"><button>edit</button></a>
 
-<a href="/portfolio"><button>Back</button></a>
-
-<form form="form" method="POST" enctype="x-www-form-urlencoded">
-  <input type="hidden" name="_method" value="DELETE">
-  <input type="submit" value="delete">
-</form>
+    <form form="form" method="POST" enctype="x-www-form-urlencoded">
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="submit" value="delete">
+    </form>
+  {{/if}}
 {{/each}}
 </ul>
 
