@@ -73,7 +73,7 @@ app.use('/logout', logout);
 app.get('/', (req,res) => {
     Project.findAll()
     .then((project)  => {
-      res.render('portfolio/index');
+      res.render('portfolio/index', {project});
     })
 })
 

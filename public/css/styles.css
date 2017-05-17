@@ -19,22 +19,7 @@
     font-family: 'Lato', sans-serif; }
 
 #headerContainer {
-  margin-top: 170px;
-  position: absolute;
-  color: #289b86; }
-  #headerContainer #navContainer {
-    /* background-color: green; */ }
-    #headerContainer #navContainer div {
-      margin: 10px; }
-  #headerContainer #shortAbout {
-    margin-top: 50px; }
-    #headerContainer #shortAbout #aboutTitle {
-      margin-left: 10px;
-      color: #262626; }
-    #headerContainer #shortAbout #aboutParagraph {
-      margin: 15px 5px 0px 10px;
-      color: #6A6A68;
-      font-family: 'Lato', sans-serif; }
+  color: blue; }
 
 #footer {
   text-align: right;
