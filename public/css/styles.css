@@ -1,3 +1,10 @@
+.banner {
+  color: #fff;
+  background: #3acec2;
+  padding: 3.2em 0;
+  margin-bottom: 48px;
+  text-align: center; }
+
 .bodyContainer .title {
   font-size: 2em;
   color: #404040;
@@ -23,11 +30,17 @@
 #header {
   flex-direction: column;
   align-items: center; }
+  #header #nav {
+    margin-right: 35px; }
+    #header #nav div {
+      margin-right: 20px; }
 
 @media (min-width: 1024px) {
   #header {
     flex-direction: row;
-    justify-content: space-between; } }
+    justify-content: space-between; }
+    #header #logo {
+      margin-left: 35px; } }
 
 #footer {
   text-align: right;
