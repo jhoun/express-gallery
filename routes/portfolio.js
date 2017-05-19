@@ -107,5 +107,11 @@ router.route('/:id/edit')
     res.render('portfolio/edit', {id: req.params.id})
   })
 
+//about page
+router.route('/about')
+  .get((req,res) => {
+    res.render('/portfolio/new');
+  });
+
 
 module.exports = router;

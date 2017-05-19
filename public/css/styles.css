@@ -82,7 +82,8 @@ ul {
   margin: auto; }
   .project-description-container .row .primary {
     border-bottom: 1px solid #8c8b8b;
-    padding-bottom: 20px; }
+    padding-bottom: 20px;
+    font-size: 15px; }
   .project-description-container .row .secondary {
     padding-top: 20px; }
 
@@ -106,6 +107,7 @@ ul {
       padding-right: 20px;
       padding-top: 20px; }
     .project-description-container .row .secondary {
+      flex: 2;
       padding-left: 20px; } }
 
 html, body {

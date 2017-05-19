@@ -3,7 +3,6 @@ const router = express.Router();
 const db = require('../models');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
-const CONFIG = require('../config/config');
 const Promise = require('bluebird');
 const bcrypt = require('bcrypt');
 Promise.promisifyAll(bcrypt);
