@@ -103,7 +103,8 @@ ul {
       border-right: 1px solid #8c8b8b;
       border-bottom: 0px;
       height: 200px;
-      padding-right: 20px; }
+      padding-right: 20px;
+      padding-top: 20px; }
     .project-description-container .row .secondary {
       padding-left: 20px; } }
 

@@ -14,7 +14,7 @@ const session = require('express-session');
 const parseurl = require('parseurl');
 const LocalStrategy = require('passport-local').Strategy
 const CONFIG = require('./config/config')
-const RedisStore = require('connect-redis')(session);
+const redisStore = require('connect-redis')(session);
 const cookieParser = require('cookie-parser');
 const flash = require('connect-flash');
 
@@ -34,8 +34,8 @@ app.use(bodyParser.urlencoded({
 }));
 
 const sess = {
-  cookie: { maxAge: 6000},
-  store: new RedisStore(),
+  // cookie: { maxAge: 6000},
+  store: new redisStore(),
   secret: CONFIG.SESSION_SECRET,
   resave: false,
   saveUninitialized: true,

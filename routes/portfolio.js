@@ -57,6 +57,7 @@ router.route('/:id')
       }
     })
     .then((project) => {
+      console.log('req.user: ', req.user);
       res.render('portfolio/id', {project, user: req.user})
     })
     .catch((e) =>{
