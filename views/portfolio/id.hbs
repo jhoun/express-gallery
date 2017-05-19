@@ -1,16 +1,19 @@
-
-{{#each project}}
-<h1>{{this.title}}</h1>
-{{/each}}
-
 <ul>
 {{#each project}}
   <div class="project-description-container">
+
+    <h1 class="title">{{this.title}}</h1>
     <img src="{{this.image}}">
-    <div class="description"><strong>Description:</strong> {{this.description}}</div>
-
-    <div class="link"><strong>Github Repository:</strong><a href="{{this.link}}">{{this.link}}</a></div>
-
+    <hr class="horizontal">
+    <div class="row">
+      <div class="primary col">
+        <div class="web-address"><strong>Web Adress:</strong><a href="#">{{this.link}}</a></div>
+        <div class="link"><strong>Github Repository:</strong><a href="{{this.link}}">{{this.link}}</a></div>
+      </div>
+      <div class="secondary col">
+        <div class="description"><strong>Description:</strong> {{this.description}}</div>
+      </div>
+    </div>
   </div>
 
   <a href="/portfolio"><button>Back</button></a>
